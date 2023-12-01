@@ -1,0 +1,54 @@
+﻿
+<div class="text-center">
+    <h1 class="display-4" onload="open_alert()">Listado de Solicitudes en Cola</h1>
+    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+    {
+        <input type="hidden" id="queue" name="queue" value="1"/>
+        <input type="submit" value="Desencolar cola 1" class = "btn btn-danger align-content-sm-center" } />
+    }
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+    {
+        <input type="hidden" id="queue" name="queue" value="2" />
+        <input type="submit" value="Desencolar cola 2" class="btn btn-danger" } />
+    }
+
+    @model List<QueueViewModel>
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Message</title>
+    </head>
+    <body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Duracion</th>
+                    <th>Cola</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Dni</th>
+                        <th>@item.Name</th>
+                        <th>@item.Queue</th>
+                        <th>@item.Status</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</div>
+
+<script type="text/javascript">
+
+    function open_alert() {
+        console.log('Page is loaded');
+    };
+</script>

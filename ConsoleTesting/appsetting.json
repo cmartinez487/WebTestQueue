@@ -1,0 +1,5 @@
+{
+  "sql": {
+    "connection": "Data Source=localhost; Initial Catalog=Testing;Persist Security Info=True;User ID=sa;Password=sa1234;Connection Timeout=35"
+  }
+}
